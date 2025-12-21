@@ -1,0 +1,330 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+    <!--Weight Properties are inaccurate!-->
+    <model name='cengaver_arm' canonical_link='STEM'>
+
+        <!-- LINKS -->
+        
+        <link name='STEM'>
+            <pose relative_to='__model__'>0 0 0 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+        <visual name='visual'>
+        <geometry>
+            <mesh>
+
+                <uri>models/blender-arm/STEM.obj</uri>
+                <scale>1 1 1</scale>
+
+            </mesh>
+        </geometry>
+        </visual>
+        </link>
+
+        <link name='TRUNK'>
+            <pose relative_to='STEM'>0 0 0.0215 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+            <geometry>
+                <mesh>
+
+                    <uri>models/blender-arm/TRUNK.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+            </geometry>
+            </visual>
+        </link>
+
+        <link name='A1'>
+            <pose relative_to='TRUNK'>0 -0.035 0.145 0 0 0</pose>
+            <gravity>false</gravity>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+            <geometry>
+                <mesh>
+
+                    <uri>models/blender-arm/A1.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+            </geometry>
+            </visual>
+        </link>
+
+        <link name='B1'>
+            <pose relative_to='TRUNK'>0 -0.035 0.145 0 0 0</pose>
+            <gravity>false</gravity>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+            <geometry>
+                <mesh>
+
+                    <uri>models/blender-arm/B1.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+            </geometry>
+            </visual>
+        </link>
+
+        <link name='B2'>
+            <pose relative_to='B1'>0 0.0656 0.0422 0 0 0</pose>
+            <gravity>false</gravity>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+            <geometry>
+                <mesh>
+
+                    <uri>models/blender-arm/B2.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+            </geometry>
+            </visual>
+        </link>
+
+        <link name='B3'>
+            <pose relative_to='B2'>0 -0.3312 0.37458 0 0 0</pose>
+            <gravity>false</gravity>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+            <geometry>
+                <mesh>
+
+                    <uri>models/blender-arm/B3.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+            </geometry>
+            </visual>
+        </link>
+
+        <link name='Gripper_template'>
+            <pose relative_to='B3'>0 -0.31791 -0.2045 0 0 0</pose>
+            <gravity>false</gravity>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+            <geometry>
+                <mesh>
+
+                    <uri>models/blender-arm/Gripper.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+            </geometry>
+            </visual>
+        </link>
+
+        <!-- JOINTS -->
+
+        <joint name="STEM_TRUNK" type="revolute">
+            <parent>STEM</parent>
+            <child>TRUNK</child>
+
+            <pose>0 0 0 0 0 0</pose>
+            <axis>
+                <xyz>0 0 1</xyz>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                    <velocity>1.0</velocity>
+                    <effort>1000.0</effort>
+                </limit>
+            </axis>
+        </joint>
+
+        <joint name="TRUNK_A1" type="revolute">
+            <parent>TRUNK</parent>
+            <child>A1</child>
+
+            <axis>
+                <xyz>1 0 0</xyz>
+            </axis>
+        </joint>
+
+        <joint name="TRUNK_B1" type="revolute">
+            <parent>TRUNK</parent>
+            <child>B1</child>
+
+            <axis>
+                <xyz>1 0 0</xyz>
+            </axis>
+        </joint>
+
+        <joint name="B1_B2" type="revolute">
+            <parent>B1</parent>
+            <child>B2</child>
+
+            <axis>
+                <xyz>1 0 0</xyz>
+            </axis>
+        </joint>
+
+        <joint name="B2_B3" type="revolute">
+            <parent>B2</parent>
+            <child>B3</child>
+
+            <axis>
+                <xyz>1 0 0</xyz>
+            </axis>
+        </joint>
+
+        <joint name="B3_Gripper" type="revolute">
+            <parent>B3</parent>
+            <child>Gripper_template</child>
+
+            <axis>
+                <xyz>1 0 0</xyz>
+            </axis>
+        </joint>
+
+        <!--JOINT CONTROLLERS-->
+        <!--Remember to replace values according to true robot-->
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>STEM_TRUNK</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>TRUNK_A1</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>TRUNK_B1</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>B1_B2</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>B2_B3</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>B3_Gripper</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+
+        <plugin
+          filename="libarm_plugin.so"
+          name="ArmPlugin">
+      </plugin>
+    </model>
+</sdf>

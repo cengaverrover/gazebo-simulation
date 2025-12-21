@@ -1,0 +1,566 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+    <!--Cengaver Body Model-->
+    <!--Weight Properties are inaccurate!-->
+    <model name='cengaver_body' canonical_link='body'>
+        <!--pose relative_to='world'>0 0 0.47 0 0 0</pose> -->
+
+        <!-- LINKS -->
+
+        <link name='body'>
+            <pose relative_to='__model__'>0 0 0 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                <ixx>0.095329</ixx>
+                <ixy>0</ixy>
+                <ixz>0</ixz>
+                <iyy>0.381317</iyy>
+                <iyz>0</iyz>
+                <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                <mesh>
+
+                    <uri>models/blender-body/Body.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+                </geometry>
+            </visual>
+
+            <collision name='collision'>
+                <pose>-0.2 0 -0.0815 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.4 0.440 0.163</size>
+                    </box>
+                </geometry>
+            </collision>
+        </link>
+
+
+
+        <link name='RL'>
+            <pose relative_to='body'>-0.150 -0.243 -0.083 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                <ixx>0.095329</ixx>
+                <ixy>0</ixy>
+                <ixz>0</ixz>
+                <iyy>0.381317</iyy>
+                <iyz>0</iyz>
+                <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                <mesh>
+
+                    <uri>models/blender-body/RL.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+                </geometry>
+            </visual>
+
+            <collision name='A1'>
+                <pose>-0.05192 -0.0325 0 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.487 0.04 0.057</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <collision name='A2'>
+                <pose>-0.36683 -0.0325 -0.1244 0 2.094 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.288 0.04 0.057</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <collision name='A3'>
+                <pose>0.264 -0.0325 -0.12615 0 -2.094 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.288 0.04 0.057</size>
+                    </box>
+                </geometry>
+            </collision>
+        </link>
+
+
+
+        <link name='LL'>
+            <pose relative_to='body'>-0.15 0.243 -0.083 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                <ixx>0.095329</ixx>
+                <ixy>0</ixy>
+                <ixz>0</ixz>
+                <iyy>0.381317</iyy>
+                <iyz>0</iyz>
+                <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                <mesh>
+
+                    <uri>models/blender-body/LL.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+                </geometry>
+            </visual>
+
+            <collision name='A1'>
+                <pose>-0.05192 0.0325 0 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.487 0.04 0.057</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <collision name='A2'>
+                <pose>-0.36683 0.0325 -0.1244 0 2.094 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.288 0.04 0.057</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <collision name='A3'>
+                <pose>0.264 0.0325 -0.12615 0 -2.094 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.288 0.04 0.057</size>
+                    </box>
+                </geometry>
+            </collision>
+        </link>
+
+
+
+        <link name='wheel-fr'>
+            <pose relative_to='RL'>0.32094 -0.0485 -0.22452 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                <ixx>0.095329</ixx>
+                <ixy>0</ixy>
+                <ixz>0</ixz>
+                <iyy>0.381317</iyy>
+                <iyz>0</iyz>
+                <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                <mesh>
+
+                    <uri>models/blender-body/Wheel-R.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+                </geometry>
+            </visual>
+
+            <collision name="Middle">
+            <pose>0 -0.098 0 1.5707 0 0</pose>
+            <geometry>
+                <cylinder>
+                <radius>0.16</radius>
+                <length>0.12</length>
+                </cylinder>
+            </geometry>
+            </collision>
+
+            <collision name="Outer">
+            <pose>0 -0.1605 0 1.5707 0 0</pose>
+            <geometry>
+                <cylinder>
+                <radius>0.09</radius>
+                <length>0.005</length>
+                </cylinder>
+            </geometry>
+            </collision>
+
+            <collision name="Inner">
+            <pose>0 -0.0165 0 1.5707 0 0</pose>
+            <geometry>
+                <cylinder>
+                <radius>0.0325</radius>
+                <length>0.033</length>
+                </cylinder>
+            </geometry>
+            </collision>
+        </link>
+
+
+
+        <link name='wheel-br'>
+            <pose relative_to='RL'>-0.42266 -0.0485 -0.22135 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                <ixx>0.095329</ixx>
+                <ixy>0</ixy>
+                <ixz>0</ixz>
+                <iyy>0.381317</iyy>
+                <iyz>0</iyz>
+                <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                <mesh>
+
+                    <uri>models/blender-body/Wheel-R.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+                </geometry>
+            </visual>
+
+            <collision name="Middle">
+            <pose>0 -0.098 0 1.5707 0 0</pose>
+            <geometry>
+                <cylinder>
+                <radius>0.16</radius>
+                <length>0.12</length>
+                </cylinder>
+            </geometry>
+            </collision>
+
+            <collision name="Outer">
+            <pose>0 -0.1605 0 1.5707 0 0</pose>
+            <geometry>
+                <cylinder>
+                <radius>0.09</radius>
+                <length>0.005</length>
+                </cylinder>
+            </geometry>
+            </collision>
+
+            <collision name="Inner">
+            <pose>0 -0.0165 0 1.5707 0 0</pose>
+            <geometry>
+                <cylinder>
+                <radius>0.0325</radius>
+                <length>0.033</length>
+                </cylinder>
+            </geometry>
+            </collision>
+        </link>
+
+
+
+        <link name='wheel-fl'>
+            <pose relative_to='LL'>0.32094 0.0485 -0.22452 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                <ixx>0.095329</ixx>
+                <ixy>0</ixy>
+                <ixz>0</ixz>
+                <iyy>0.381317</iyy>
+                <iyz>0</iyz>
+                <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                <mesh>
+
+                    <uri>models/blender-body/Wheel-L.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+                </geometry>
+            </visual>
+
+            <collision name="Middle">
+            <pose>0 0.098 0 1.5707 0 0</pose>
+            <geometry>
+                <cylinder>
+                <radius>0.16</radius>
+                <length>0.12</length>
+                </cylinder>
+            </geometry>
+            </collision>
+
+            <collision name="Outer">
+            <pose>0 0.1605 0 1.5707 0 0</pose>
+            <geometry>
+                <cylinder>
+                <radius>0.09</radius>
+                <length>0.005</length>
+                </cylinder>
+            </geometry>
+            </collision>
+
+            <collision name="Inner">
+            <pose>0 0.0165 0 1.5707 0 0</pose>
+            <geometry>
+                <cylinder>
+                <radius>0.0325</radius>
+                <length>0.033</length>
+                </cylinder>
+            </geometry>
+            </collision>
+        </link>
+
+
+
+        <link name='wheel-bl'>
+            <pose relative_to='LL'>-0.42266 0.0485 -0.22135 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                <ixx>0.095329</ixx>
+                <ixy>0</ixy>
+                <ixz>0</ixz>
+                <iyy>0.381317</iyy>
+                <iyz>0</iyz>
+                <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                <mesh>
+
+                    <uri>models/blender-body/Wheel-L.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+                </geometry>
+            </visual>
+
+            <collision name="Middle">
+            <pose>0 0.098 0 1.5707 0 0</pose>
+            <geometry>
+                <cylinder>
+                <radius>0.16</radius>
+                <length>0.12</length>
+                </cylinder>
+            </geometry>
+            </collision>
+
+            <collision name="Outer">
+            <pose>0 0.1605 0 1.5707 0 0</pose>
+            <geometry>
+                <cylinder>
+                <radius>0.09</radius>
+                <length>0.005</length>
+                </cylinder>
+            </geometry>
+            </collision>
+
+            <collision name="Inner">
+            <pose>0 0.0165 0 1.5707 0 0</pose>
+            <geometry>
+                <cylinder>
+                <radius>0.0325</radius>
+                <length>0.033</length>
+                </cylinder>
+            </geometry>
+            </collision>
+        </link>
+
+
+
+        <link name='rocker'>
+            <pose relative_to='body'>-0.405 0 0.019 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                <ixx>0.095329</ixx>
+                <ixy>0</ixy>
+                <ixz>0</ixz>
+                <iyy>0.381317</iyy>
+                <iyz>0</iyz>
+                <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                <mesh>
+
+                    <uri>models/blender-body/Rocker.obj</uri>
+                    <scale>1 1 1</scale>
+
+                </mesh>
+                </geometry>
+            </visual>
+
+            <collision name='collision'>
+                <pose>-0.2 0 -0.0815 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.4 0.440 0.163</size>
+                    </box>
+                </geometry>
+            </collision>
+        </link>
+
+        <!-- JOINTS -->
+
+        <joint name="body_RL" type="revolute">
+            <parent>body</parent>
+            <child>RL</child>
+
+            <pose>0 0 0 0 0 0</pose>
+            <axis>
+                <xyz>0 1 0</xyz>
+            </axis>
+        </joint>
+
+        <joint name="body_LL" type="revolute">
+            <parent>body</parent>
+            <child>LL</child>
+
+            <pose>0 0 0 0 0 0</pose>
+            <axis>
+                <xyz>0 1 0</xyz>
+            </axis>
+        </joint>
+
+        <joint name="body_rocker" type="revolute">
+            <parent>body</parent>
+            <child>rocker</child>
+
+            <pose>0 0 0 0 0 0</pose>
+            <axis>
+                <xyz>1 0 0</xyz>
+            </axis>
+        </joint>
+
+        <joint name="RL_fr" type="revolute">
+            <parent>RL</parent>
+            <child>wheel-fr</child>
+
+            <pose>0 0 0 0 0 0</pose>
+            <axis>
+                <xyz>0 1 0</xyz>
+            </axis>
+        </joint>
+
+        <joint name="RL_br" type="revolute">
+            <parent>RL</parent>
+            <child>wheel-br</child>
+
+            <pose>0 0 0 0 0 0</pose>
+            <axis>
+                <xyz>0 1 0</xyz>
+            </axis>
+        </joint>
+
+        <joint name="LL_fl" type="revolute">
+            <parent>LL</parent>
+            <child>wheel-fl</child>
+
+            <pose>0 0 0 0 0 0</pose>
+            <axis>
+                <xyz>0 1 0</xyz>
+            </axis>
+        </joint>
+
+        <joint name="LL_bl" type="revolute">
+            <parent>LL</parent>
+            <child>wheel-bl</child>
+
+            <pose>0 0 0 0 0 0</pose>
+            <axis>
+                <xyz>0 1 0</xyz>
+            </axis>
+        </joint>
+
+        <!--JOINT CONTROLLERS-->
+        <!--Remember to replace values according to true robot-->
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>RL_fr</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>RL_br</joint_name>
+            <p_gain>20.0</p_gain> 
+            <d_gain>2.0</d_gain>
+            <i_gain>0.1</i_gain>
+            <i_min>-1.0</i_min>
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>LL_fl</joint_name>
+            <p_gain>20.0</p_gain>
+            <d_gain>2.0</d_gain>
+            <i_gain>0.1</i_gain>
+            <i_min>-1.0</i_min>
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+            </plugin>
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>LL_bl</joint_name>
+            <p_gain>20.0</p_gain>
+            <d_gain>2.0</d_gain>
+            <i_gain>0.1</i_gain>
+            <i_min>-1.0</i_min>
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+
+        <!-- The three below plugins keep the relation between rocker(differential) and legs intact (solution to parallel mechanism)-->
+
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>body_LL</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>body_RL</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+
+      <plugin
+          filename="libbody_plugin.so"
+          name="BodyPlugin">
+      </plugin>
+    </model>
+</sdf>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+    <model name="cengaver"> 
+
+      <!-- Body -->
+      <include>
+        <uri>file://assets/cengaver_body.sdf</uri>
+        <pose>0 0 0.47 0 0 0</pose>
+      </include>
+
+      <!-- Arm -->
+      <include>
+        <uri>file://assets/cengaver_arm.sdf</uri>
+        <pose relative_to="cengaver_body">-0.065 0 0 0 0 1.570796</pose>
+      </include>
+
+      <joint name="Body_Arm" type="fixed">
+        <parent>cengaver_body</parent>
+        <child>cengaver_arm</child>
+      </joint>
+    </model>
+</sdf>
