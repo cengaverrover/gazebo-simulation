@@ -18,16 +18,16 @@
                     <izz>0.476646</izz>
                 </inertia>
             </inertial>
-        <visual name='visual'>
-        <geometry>
-            <mesh>
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
 
-                <uri>models/blender-arm/STEM.obj</uri>
-                <scale>1 1 1</scale>
+                        <uri>models/blender-arm/STEM.obj</uri>
+                        <scale>1 1 1</scale>
 
-            </mesh>
-        </geometry>
-        </visual>
+                    </mesh>
+                </geometry>
+            </visual>
         </link>
 
         <link name='TRUNK'>
@@ -53,6 +53,15 @@
                 </mesh>
             </geometry>
             </visual>
+
+            <collision name='collision'>
+                <pose>0 0 0.099 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.26 0.176 0.198</size>
+                    </box>
+                </geometry>
+            </collision>
         </link>
 
         <link name='A1'>
@@ -70,15 +79,23 @@
                 </inertia>
             </inertial>
             <visual name='visual'>
-            <geometry>
-                <mesh>
+                <geometry>
+                    <mesh>
 
-                    <uri>models/blender-arm/A1.obj</uri>
-                    <scale>1 1 1</scale>
+                        <uri>models/blender-arm/A1.obj</uri>
+                        <scale>1 1 1</scale>
 
-                </mesh>
-            </geometry>
+                    </mesh>
+                </geometry>
             </visual>
+            <collision name='collision'>
+                <pose>0 -0.1656 0.18728797063 -0.8407189 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.074 0.5573 0.059</size>
+                    </box>
+                </geometry>
+            </collision>
         </link>
 
         <link name='B1'>
@@ -105,6 +122,14 @@
                 </mesh>
             </geometry>
             </visual>
+            <collision name='collision'>
+                <pose>0 0.03562251487 0.02294946448 -2.569969 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.015 0.10725 0.036</size>
+                    </box>
+                </geometry>
+            </collision>
         </link>
 
         <link name='B2'>
@@ -131,6 +156,14 @@
                 </mesh>
             </geometry>
             </visual>
+            <collision name='collision'>
+                <pose>0 -0.1655 0.18728797063 -0.8407189 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.02 0.535 0.035</size>
+                    </box>
+                </geometry>
+            </collision>
         </link>
 
         <link name='B3'>
@@ -148,15 +181,23 @@
                 </inertia>
             </inertial>
             <visual name='visual'>
-            <geometry>
-                <mesh>
+                <geometry>
+                    <mesh>
 
-                    <uri>models/blender-arm/B3.obj</uri>
-                    <scale>1 1 1</scale>
+                        <uri>models/blender-arm/B3.obj</uri>
+                        <scale>1 1 1</scale>
 
-                </mesh>
-            </geometry>
+                    </mesh>
+                </geometry>
             </visual>
+            <collision name='collision'>
+                <pose>0 -0.15159456205 -0.09751487711 0.5716232 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.046 0.3955 0.035</size>
+                    </box>
+                </geometry>
+            </collision>
         </link>
 
         <link name='Gripper_template'>
