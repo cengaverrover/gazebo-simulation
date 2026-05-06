@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+    <model name="atom"> 
+
+      <!-- Body -->
+      <include>
+        <uri>file://assets/atom_body.sdf</uri>
+        <pose>0 0 0.355 0 0 0</pose>
+      </include>
+
+      <!-- Arm -->
+      <include>
+        <uri>file://assets/atom_arm.sdf</uri>
+        <pose relative_to="atom_body">0.1175 0 0.008 0 0 1.570796</pose>
+      </include>
+
+      <joint name="Body_Arm" type="fixed">
+        <parent>atom_body</parent>
+        <child>atom_arm</child>
+      </joint>
+
+      <!-- Communication to joints' plugin -->
+      <plugin
+        filename="ignition-gazebo-joint-state-publisher-system"
+        name="ignition::gazebo::systems::JointStatePublisher">
+      </plugin>
+        
+    </model>
+</sdf>

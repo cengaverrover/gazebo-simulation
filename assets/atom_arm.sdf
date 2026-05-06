@@ -1,0 +1,494 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+    <!--Weight Properties are inaccurate!-->
+    <model name='atom_arm' canonical_link='STEM'>
+
+        <!-- LINKS -->
+        
+        <link name='STEM'>
+            <pose relative_to='__model__'>0 0 0 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+
+                        <uri>models/atom/Arm/STEM.obj</uri>
+                        <scale>1 1 1</scale>
+
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <collision name='collision'>
+                <geometry>
+                    <box>
+                        <size>0.2 0.2 0.2</size>
+                    </box>
+                </geometry>
+            </collision>
+        </link>
+
+        <link name='A1'>
+            <pose relative_to='STEM'>0 0 0.016 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+
+                        <uri>models/atom/Arm/A1.obj</uri>
+                        <scale>1 1 1</scale>
+
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+
+        <link name='A2'>
+            <pose relative_to='A1'>0.016 0 0.08 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+
+                        <uri>models/atom/Arm/A2.obj</uri>
+                        <scale>1 1 1</scale>
+
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+
+        <link name='A3'>
+            <pose relative_to='A2'>0.0021 0.19874  0.33612 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+
+                        <uri>models/atom/Arm/A3.obj</uri>
+                        <scale>1 1 1</scale>
+
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+        
+        <link name='A4'>
+            <pose relative_to='A3'>0 -0.1469 0.21224 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+
+                        <uri>models/atom/Arm/A4.obj</uri>
+                        <scale>1 1 1</scale>
+
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+
+        <link name='A5'>
+            <pose relative_to='A4'>0 -0.068 0 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+
+                        <uri>models/atom/Arm/A5.obj</uri>
+                        <scale>1 1 1</scale>
+
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+
+        <link name='G_R1'>
+            <pose relative_to='A5'>-0.03 -0.116 0 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+
+                        <uri>models/atom/Arm/G_R1.obj</uri>
+                        <scale>1 1 1</scale>
+
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+
+        <link name='G_L1'>
+            <pose relative_to='A5'>0.03 -0.116 0 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+
+                        <uri>models/atom/Arm/G_L1.obj</uri>
+                        <scale>1 1 1</scale>
+
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+
+        <link name='G_R2'>
+            <pose relative_to='A5'>-0.01 -0.136 0 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+
+                        <uri>models/atom/Arm/G_R2.obj</uri>
+                        <scale>1 1 1</scale>
+
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+
+        <link name='G_L2'>
+            <pose relative_to='A5'>0.01 -0.136 0 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+
+                        <uri>models/atom/Arm/G_L2.obj</uri>
+                        <scale>1 1 1</scale>
+
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+
+        <link name='RP'>
+            <pose relative_to='G_R1'>-0.02349 -0.03238 0 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+
+                        <uri>models/atom/Arm/RP.obj</uri>
+                        <scale>1 1 1</scale>
+
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+
+        <link name='LP'>
+            <pose relative_to='G_L1'>0.02349 -0.03238 0 0 0 0</pose>
+            <inertial>
+                <mass>1.14395</mass>
+                <inertia>
+                    <ixx>0.095329</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.381317</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.476646</izz>
+                </inertia>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+
+                        <uri>models/atom/Arm/LP.obj</uri>
+                        <scale>1 1 1</scale>
+
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+
+
+        <!-- JOINTS -->
+        <joint name="STEM_A1" type="revolute">
+            <parent>STEM</parent>
+            <child>A1</child>
+            <axis>
+                <xyz>0 0 1</xyz>
+            </axis>
+        </joint>
+        <joint name="A1_A2" type="revolute">
+            <parent>A1</parent>
+            <child>A2</child>
+            <axis>
+                <xyz>1 0 0</xyz>
+            </axis>
+        </joint>
+        <joint name="A2_A3" type="revolute">
+            <parent>A2</parent>
+            <child>A3</child>
+            <axis>
+                <xyz>1 0 0</xyz>
+            </axis>
+        </joint>
+        <joint name="A3_A4" type="revolute">
+            <parent>A3</parent>
+            <child>A4</child>
+            <axis>
+                <xyz>1 0 0</xyz>
+            </axis>
+        </joint>
+        <joint name="A4_A5" type="revolute">
+            <parent>A4</parent>
+            <child>A5</child>
+            <axis>
+                <xyz>1 0 0</xyz>
+            </axis>
+        </joint>
+        <joint name="A5_GL1" type="fixed"> <!--temp fixed-->
+            <parent>A5</parent>
+            <child>G_L1</child>
+            <axis>
+                <xyz>0 0 1</xyz>
+            </axis>
+        </joint>
+        <joint name="A5_GR1" type="fixed"> <!--temp fixed-->
+            <parent>A5</parent>
+            <child>G_R1</child>
+            <axis>
+                <xyz>0 0 1</xyz>
+            </axis>
+        </joint>
+        <joint name="A5_GL2" type="fixed"> <!--temp fixed-->
+            <parent>A5</parent>
+            <child>G_L2</child>
+            <axis>
+                <xyz>0 0 1</xyz>
+            </axis>
+        </joint>
+        <joint name="A5_GR2" type="fixed"> <!--temp fixed-->
+            <parent>A5</parent>
+            <child>G_R2</child>
+            <axis>
+                <xyz>0 0 1</xyz>
+            </axis>
+        </joint>
+        <joint name="GL1_LP" type="fixed"> <!--temp fixed-->
+            <parent>G_L1</parent>
+            <child>LP</child>
+            <axis>
+                <xyz>0 0 1</xyz>
+            </axis>
+        </joint>
+        <joint name="GR1_RP" type="fixed"> <!--temp fixed-->
+            <parent>G_R1</parent>
+            <child>RP</child>
+            <axis>
+                <xyz>0 0 1</xyz>
+            </axis>
+        </joint>
+        <!-- SENSORS -->
+
+        <!-- CAMERA -->
+        <link name="arm_camera">
+            <pose relative_to="STEM">0.01316 0.0139 0.71186 0 0 -1.5708</pose>
+            
+            <sensor name="camera_sensor" type="camera">
+                <always_on>true</always_on>
+                <update_rate>30</update_rate>
+                <visualize>true</visualize>
+
+                <camera>
+                <horizontal_fov>1.047</horizontal_fov> <!--60deg-->
+
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>R8G8B8</format>
+                </image>
+
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.01</stddev>
+                </noise>
+
+                <clip>
+                    <near>0.1</near>
+                    <far>100</far>
+                </clip>
+                </camera>
+
+                <topic>/rover/arm_camera/rgb</topic>
+            </sensor>
+        </link>
+        <joint name="A4_arm_cam" type="fixed">
+            <parent>A4</parent>
+            <child>arm_camera</child>
+        </joint>
+        
+        <!-- JOINT CONTROLLERS -->
+
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>STEM_A1</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>A1_A2</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>A2_A3</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>A3_A4</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+        <plugin filename="ignition-gazebo-joint-controller-system"
+            name="ignition::gazebo::systems::JointController">
+            <joint_name>A4_A5</joint_name>
+            <p_gain>20.0</p_gain>     <!-- N·m per rad (approx) -->
+            <d_gain>2.0</d_gain>      <!-- N·m·s per rad -->
+            <i_gain>0.1</i_gain>      <!-- small integrator -->
+            <i_min>-1.0</i_min>       <!-- clamp integral contribution (N·m) -->
+            <i_max>1.0</i_max>
+            <cmd_min>-1</cmd_min>
+            <cmd_max>1</cmd_max>
+        </plugin>
+
+    </model>
+</sdf>

@@ -1,0 +1,456 @@
+<?xml version="1.0"?>
+<robot name="cengaver">
+  <!-- This file is used only for state publishing (robot/joint), and is not part of the simulation itself -->
+  <!-- Base body link -->
+  <link name="Body">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="models/atom/Body/Body.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.2 0 -0.0815"/>
+      <geometry>
+        <box size="0.4 0.44 0.163"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="cengaver"/>
+
+  <joint name="cengaver_to_Body" type="fixed">
+    <parent link="cengaver"/>
+    <child link="Body"/>
+    <origin xyz="0 0 0.355"/>
+  </joint>
+
+  <link name="RL">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="models/atom/Body/RL.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.05192 -0.0325 0"/>
+      <geometry>
+        <box size="0.487 0.04 0.057"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="LL">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="models/atom/Body/LL.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.05192 -0.0325 0"/>
+      <geometry>
+        <box size="0.487 0.04 0.057"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="RFW">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="models/atom/Body/Wheel_L.obj" scale="1 -1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.098 0" rpy="1.5707 0 0"/>
+      <geometry>
+        <cylinder radius="0.16" length="0.12"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="RBW">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="models/atom/Body/Wheel_L.obj" scale="1 -1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.098 0" rpy="1.5707 0 0"/>
+      <geometry>
+        <cylinder radius="0.16" length="0.12"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="LBW">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="models/atom/Body/Wheel_L.obj" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.098 0" rpy="1.5707 0 0"/>
+      <geometry>
+        <cylinder radius="0.16" length="0.12"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="LFW">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="models/atom/Body/Wheel_L.obj" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.098 0" rpy="1.5707 0 0"/>
+      <geometry>
+        <cylinder radius="0.16" length="0.12"/>
+      </geometry>
+    </collision>
+  </link>
+
+<link name="Lidar_Link"/>
+<joint name="lidar_joint" type="fixed">
+  <parent link="Body"/>
+  <child link="Lidar_Link"/>
+</joint>
+
+  <!-- Depth camera -->
+  <link name="depth_camera"/>
+
+  <joint name="Body_depth" type="fixed">
+    <parent link="Body"/>
+    <child link="depth_camera"/>
+    <origin xyz="0.2325 0 0.015"/>
+  </joint>
+
+  <!-- ARM -->
+  <!-- All arm links are rotated 90° about Z to face forward (+X) instead of sideways (-Y) -->
+
+  <link name="STEM">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="models/atom/Arm/STEM.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.2 0.2 0.2"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="A1">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="models/atom/Arm/A1.obj"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="A2">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="models/atom/Arm/A2.obj"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="A3">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="models/atom/Arm/A3.obj"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="A4">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="models/atom/Arm/A4.obj"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="A5">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="models/atom/Arm/A5.obj"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- Gripper links -->
+  <link name="G_R1">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="models/atom/Arm/G_R1.obj"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="G_L1">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="models/atom/Arm/G_L1.obj"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="G_R2">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="models/atom/Arm/G_R2.obj"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="G_L2">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="models/atom/Arm/G_L2.obj"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="RP">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="models/atom/Arm/RP.obj"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="LP">
+    <inertial>
+      <mass value="1.14395"/>
+      <inertia ixx="0.095329" ixy="0" ixz="0" iyy="0.381317" iyz="0" izz="0.476646"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="models/atom/Arm/LP.obj"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="Body_Arm" type="fixed">
+    <parent link="Body"/>
+    <child link="STEM"/>
+    <origin xyz="0.1175 0 0.008" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="STEM_A1" type="revolute">
+    <parent link="STEM"/>
+    <child link="A1"/>
+    <origin xyz="0 0 0.016" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="1"/>
+  </joint>
+
+  <joint name="A1_A2" type="revolute">
+    <parent link="A1"/>
+    <child link="A2"/>
+    <origin xyz="0 0.016 0.08" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5708" upper="1.5708" effort="100" velocity="1"/>
+  </joint>
+
+  <joint name="A2_A3" type="revolute">
+    <parent link="A2"/>
+    <child link="A3"/>
+    <origin xyz="-0.19874 0.0021 0.33612" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5708" upper="1.5708" effort="100" velocity="1"/>
+  </joint>
+
+  <joint name="A3_A4" type="revolute">
+    <parent link="A3"/>
+    <child link="A4"/>
+    <origin xyz="0.1469 0 0.21224" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5708" upper="1.5708" effort="100" velocity="1"/>
+  </joint>
+
+  <joint name="A4_A5" type="revolute">
+    <parent link="A4"/>
+    <child link="A5"/>
+    <origin xyz="0.068 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5708" upper="1.5708" effort="100" velocity="1"/>
+  </joint>
+
+  <joint name="A5_GL1" type="revolute">
+    <parent link="A5"/>
+    <child link="G_L1"/>
+    <origin xyz="0.116 0.03 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.7854" upper="0.7854" effort="100" velocity="1"/>
+  </joint>
+
+  <joint name="A5_GR1" type="revolute">
+    <parent link="A5"/>
+    <child link="G_R1"/>
+    <origin xyz="0.116 -0.03 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.7854" upper="0.7854" effort="100" velocity="1"/>
+  </joint>
+
+  <joint name="A5_GL2" type="revolute">
+    <parent link="A5"/>
+    <child link="G_L2"/>
+    <origin xyz="0.136 0.01 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.7854" upper="0.7854" effort="100" velocity="1"/>
+  </joint>
+
+  <joint name="A5_GR2" type="revolute">
+    <parent link="A5"/>
+    <child link="G_R2"/>
+    <origin xyz="0.136 -0.01 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.7854" upper="0.7854" effort="100" velocity="1"/>
+  </joint>
+
+  <joint name="GL1_LP" type="revolute">
+    <parent link="G_L1"/>
+    <child link="LP"/>
+    <origin xyz="0.03238 0.02349 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.7854" upper="0.7854" effort="100" velocity="1"/>
+  </joint>
+
+  <joint name="GR1_RP" type="revolute">
+    <parent link="G_R1"/>
+    <child link="RP"/>
+    <origin xyz="0.03238 -0.02349 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.7854" upper="0.7854" effort="100" velocity="1"/>
+  </joint>
+
+  <joint name="Body_RL" type="continuous">
+    <parent link="Body"/>
+    <child link="RL"/>
+    <origin xyz="0.025 -0.305 0.013"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="Body_LL" type="revolute">
+    <parent link="Body"/>
+    <child link="LL"/>
+    <origin xyz="0.025 0.305 0.013"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0" upper="0" effort="1000" velocity="1000"/>
+  </joint>
+
+  <joint name="RL_FW" type="continuous">
+    <parent link="RL"/>
+    <child link="RFW"/>
+    <origin xyz="0.41717 -0.035 -0.22366"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="RL_BW" type="continuous">
+    <parent link="RL"/>
+    <child link="RBW"/>
+    <origin xyz="-0.31739 -0.035 -0.22353"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="LL_BW" type="continuous">
+    <parent link="LL"/>
+    <child link="LBW"/>
+    <origin xyz="-0.31739 0.035 -0.22353"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="LL_FW" type="continuous">
+    <parent link="LL"/>
+    <child link="LFW"/>
+    <origin xyz="0.41739 0.035 -0.22353"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+</robot>
