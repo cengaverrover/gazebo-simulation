@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="cengaver">
+<robot name="atom">
   <!-- This file is used only for state publishing (robot/joint), and is not part of the simulation itself -->
   <!-- Base body link -->
   <link name="Body">
@@ -20,10 +20,10 @@
     </collision>
   </link>
 
-  <link name="cengaver"/>
+  <link name="atom"/>
 
-  <joint name="cengaver_to_Body" type="fixed">
-    <parent link="cengaver"/>
+  <joint name="atom_to_Body" type="fixed">
+    <parent link="atom"/>
     <child link="Body"/>
     <origin xyz="0 0 0.355"/>
   </joint>
