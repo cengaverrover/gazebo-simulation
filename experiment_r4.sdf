@@ -829,7 +829,7 @@
         <!-- Atom -->
         <include>
             <uri>file://assets/atom.sdf</uri>
-            <pose relative_to="world">0 1.5 0 0 0 1.570796</pose>
+            <pose relative_to="world">0 1.5 0.355 0 0 1.570796</pose>
         </include>
     </world>
 </sdf>
