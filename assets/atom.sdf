@@ -18,12 +18,6 @@
         <parent>atom_body</parent>
         <child>atom_arm</child>
       </joint>
-
-      <!-- Communication to joints' plugin -->
-      <plugin
-        filename="ignition-gazebo-joint-state-publisher-system"
-        name="ignition::gazebo::systems::JointStatePublisher">
-      </plugin>
-        
+              
     </model>
 </sdf>

@@ -33,30 +33,18 @@ def generate_launch_description():
             output='screen'
         ),
 
-        # Robot and joint state publishers, needed by foxglove
+        # Robot state publisher (+joint state publisher lives in ros_gz_bridge), needed by foxglove
         Node(
             package='robot_state_publisher',
             executable='robot_state_publisher',
             arguments=[urdf],
             parameters=[{'use_sim_time': True}],
-            output='screen'
-        ),
-
-        Node(
-            package='joint_state_publisher',
-            executable='joint_state_publisher',
-            parameters=[
-                {'use_sim_time': True},
-                {
-                    'robot_description': ParameterValue(
-                        Command(['cat ', urdf]),
-                        value_type=str
-                    )
-                }
+            remappings=[
+                ('/joint_states', '/rover/joint_states'),
+                ('/robot_description', '/rover/robot_description')
             ],
             output='screen'
         ),
-
         # ros->foxglove bridge
         Node(
             package='foxglove_bridge',
