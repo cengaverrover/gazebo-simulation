@@ -1,6 +1,19 @@
 <?xml version="1.0"?>
 <robot name="atom">
   <!-- This file is used only for state publishing (robot/joint), and is not part of the simulation itself -->
+
+  <link name="atom"/>
+  <joint name="atom_to_atom_body" type="fixed">
+    <parent link="atom"/>
+    <child link="atom_body"/>
+  </joint>
+
+  <link name="atom_body"/>
+  <joint name="atom_body_to_Body" type="fixed">
+    <parent link="atom_body"/>
+    <child link="Body"/>
+  </joint>
+
   <!-- Base body link -->
   <link name="Body">
     <inertial>
@@ -19,14 +32,6 @@
       </geometry>
     </collision>
   </link>
-
-  <link name="atom"/>
-
-  <joint name="atom_to_Body" type="fixed">
-    <parent link="atom"/>
-    <child link="Body"/>
-    <origin xyz="0 0 0.355"/>
-  </joint>
 
   <link name="RL">
     <inertial>
@@ -136,11 +141,19 @@
     </collision>
   </link>
 
-<link name="Lidar_Link"/>
-<joint name="lidar_joint" type="fixed">
-  <parent link="Body"/>
-  <child link="Lidar_Link"/>
-</joint>
+  <link name="Lidar_Link"/>
+  <joint name="LIDAR_Body" type="fixed">
+    <parent link="Body"/>
+    <child link="Lidar_Link"/>
+    <origin xyz="-0.015 0 -0.115" rpy="0 0 0"/>
+  </joint>
+
+  <link name="gpu_lidar"/>
+  <joint name="Lidar_Link_gpu_lidar" type="fixed">
+    <parent link="Lidar_Link"/>
+    <child link="gpu_lidar"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
 
   <!-- Depth camera -->
   <link name="depth_camera"/>
@@ -149,6 +162,20 @@
     <parent link="Body"/>
     <child link="depth_camera"/>
     <origin xyz="0.2325 0 0.015"/>
+  </joint>
+
+  <link name="camera_sensor"/>
+  <joint name="depth_camera_camera_sensor" type="fixed">
+    <parent link="depth_camera"/>
+    <child link="camera_sensor"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="depth_sensor"/>
+  <joint name="depth_camera_depth_sensor" type="fixed">
+    <parent link="depth_camera"/>
+    <child link="depth_sensor"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
 
   <!-- ARM -->
