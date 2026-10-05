@@ -14,7 +14,6 @@ def generate_launch_description():
     root = os.getcwd()
 
     urdf = os.path.join(root, "assets", "atom_full.urdf")
-    bridge_config = os.path.join(root, "configs", "ros-gz-bridge.yaml")
 
     return LaunchDescription([
 
@@ -34,17 +33,6 @@ def generate_launch_description():
         Node(
             package='foxglove_bridge',
             executable='foxglove_bridge',
-            output='screen'
-        ),
-
-        # gz->ros bridge
-        Node(
-            package='ros_gz_bridge',
-            executable='parameter_bridge',
-            parameters=[{
-                'config_file': bridge_config
-            }],
-            cwd=os.path.join(root, "configs"),
             output='screen'
         ),
 
