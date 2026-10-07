@@ -5,8 +5,7 @@ from launch_ros.parameter_descriptions import ParameterValue
 from launch.substitutions import Command, LaunchConfiguration
 import os
 
-# This launch file launches a simulation that publishes all its data to ROS and Foxglove
-# Used for testing foxglove controls or reading flawless data
+# Used in foxglove_controller as a robot and joint state publisher, also shares the assets folder to the rover can be visualized
 # Author: Dena Vafadar Afshar
 
 def generate_launch_description():
@@ -14,6 +13,8 @@ def generate_launch_description():
     root = os.getcwd()
 
     urdf = os.path.join(root, "assets", "atom_full.urdf")
+    with open(urdf, 'r') as f:
+        robot_desc = f.read()
 
     return LaunchDescription([
 
@@ -22,17 +23,27 @@ def generate_launch_description():
             package='robot_state_publisher',
             executable='robot_state_publisher',
             arguments=[urdf],
-            parameters=[{'use_sim_time': True}],
-            remappings=[
-                ('/joint_states', '/rover/joint_states'),
-                ('/robot_description', '/rover/robot_description')
-            ],
-            output='screen'
+            parameters=[{
+                'robot_description': robot_desc,
+            }],
+            output='screen',
+        ),
+        Node(
+            package='joint_state_publisher',
+            executable='joint_state_publisher',
+            parameters=[{'robot_description': robot_desc}],
+            output='screen',
         ),
         # ros->foxglove bridge
         Node(
             package='foxglove_bridge',
             executable='foxglove_bridge',
+            output='screen'
+        ),
+
+        Node(
+            package='joy',
+            executable='joy_node',
             output='screen'
         ),
 
@@ -45,30 +56,6 @@ def generate_launch_description():
                 '--cors'
             ],
             cwd=root,
-            output='screen'
-        ),
-
-        # Fixes the lidar topic name mismatch between the URDF and SDF files.
-        Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            arguments=[
-                '0','0','0','0','0','0',
-                'atom/atom_body/Lidar_Link',
-                'atom/atom_body/Lidar_Link/gpu_lidar'
-            ],
-        ),
-
-        # TF publisher
-        Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            arguments=[
-                '0', '0', '0', #xyz
-                '0', '0', '0', #rpy
-                'atom',
-                'atom/atom_body/Lidar_Link/gpu_lidar'
-            ],
             output='screen'
         ),
     ])
